@@ -35,10 +35,10 @@
    $(function(){
 
      $(document).ready( function () {
-      $('#studentTable').DataTable({
+      $('#recipesTable').DataTable({
         dom: 'Bfrtip',
         buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
+            // 'copy', 'csv', 'excel', 'pdf', 'print'
         ],
         colReorder: true,
         "scrollX": true
@@ -47,6 +47,9 @@
       } );
 
     //code goes here
+
+
+
 
    })
 

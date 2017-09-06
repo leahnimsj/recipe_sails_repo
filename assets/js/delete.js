@@ -31,13 +31,13 @@
 
    $(function(){
 
-     $('#student_id').selectpicker({
+     $('#recipe_id').selectpicker({
        style: 'btn-info',
        size: 4,
        liveSearch: true,
        showTick: true,
        tickIcon: 'glyphicon-user',
-       header: "Student search"
+       header: "Recipe search"
       });
 
 

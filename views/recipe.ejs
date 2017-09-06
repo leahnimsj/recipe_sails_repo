@@ -1,0 +1,53 @@
+<ol class="breadcrumb">
+    <li class="active">Home</a></li>
+</ol>
+
+<br/>
+
+<%- partial ('partials/statusmessage.ejs') %>
+
+
+<h2>Recipe Title: <%= recipe.title %></h2>
+<h4>Description: <%= recipe.description %></h4>
+<h4>Time to Cook: <%= recipe.minutes %></h4>
+
+</br>
+<table class="table text-center" id="ingredientTable">
+  <thead>
+    <tr>
+      <th class="text-center">Ingredient</th>
+      <th class="text-center">Measurement</th>
+      <th class="text-center">Quanity</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% recipe.ingredients.forEach(function(ingredient){ %>
+    <tr>
+      <td><%= ingredient.name %></td>
+      <td><%= ingredient.unit %></td>
+      <td><%= ingredient.quantity %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<br/>
+<br/>
+<br/>
+
+<table class="table text-center" id="instructionTable">
+  <thead>
+    <tr>
+      <th class="text-center">Step Number</th>
+      <th class="text-center">Instruction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% recipe.instructions.forEach(function(instruction){ %>
+    <tr>
+      <td><%= instruction.id %></td>
+      <td><%= instruction.instruction %></td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>

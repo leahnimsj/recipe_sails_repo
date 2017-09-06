@@ -24,56 +24,56 @@
  *
  */
 
-(function(){
-
-  $(function(){
-
-    $("#addStudentForm").validate({
-      errorClass: 'text-danger',
-      rules: {
-        // simple rule, converted to {required:true}
-        first_name: {
-          required: true,
-          minlength: 2
-        },
-        // compound rule
-        last_name: {
-          required: true,
-          minlength: 2
-        },
-
-        start_date: {
-          dateISO: true,
-          required: true
-        },
-
-        gpa: {
-          number: true
-        },
-
-        sat: {
-          range: [0,2400]
-        }
-
-
-      },
-      messages: {
-        first_name: {
-          required: "First name is required",
-          minlength: "Is your last name really only 2 letters?"
-        },
-        last_name: {
-          required: "Last name is required"
-        },
-        start_date: {
-          required: "Start date is required"
-        }
-
-      }
-    });
-
-  	//code goes here
-
-  })
-
-})();
+// (function(){
+//
+//   $(function(){
+//
+//     $("#addStudentForm").validate({
+//       errorClass: 'text-danger',
+//       rules: {
+//         // simple rule, converted to {required:true}
+//         first_name: {
+//           required: true,
+//           minlength: 2
+//         },
+//         // compound rule
+//         last_name: {
+//           required: true,
+//           minlength: 2
+//         },
+//
+//         start_date: {
+//           dateISO: true,
+//           required: true
+//         },
+//
+//         gpa: {
+//           number: true
+//         },
+//
+//         sat: {
+//           range: [0,2400]
+//         }
+//
+//
+//       },
+//       messages: {
+//         first_name: {
+//           required: "First name is required",
+//           minlength: "Is your last name really only 2 letters?"
+//         },
+//         last_name: {
+//           required: "Last name is required"
+//         },
+//         start_date: {
+//           required: "Start date is required"
+//         }
+//
+//       }
+//     });
+//
+//   	//code goes here
+//
+//   })
+//
+// })();
