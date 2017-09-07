@@ -48,6 +48,8 @@ module.exports.routes = {
   '/'      :                  'RecipeController.read',
   '/update':                  'RecipeController.update',
   '/delete':                  'RecipeController.delete',
-  '/recipes/:id':             'RecipeController.recipe'
+  '/recipes/:id':             'RecipeController.recipe',
+  '/recipes/:recipeid/ingredients/:ingredid': 'RecipeController.deleteingredient',
+  '/recipes/:recipeid/instructions/:instructid': 'RecipeController.deleteinstruction'
 
 };

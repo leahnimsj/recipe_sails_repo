@@ -18,6 +18,7 @@
       <th class="text-center">Ingredient</th>
       <th class="text-center">Measurement</th>
       <th class="text-center">Quanity</th>
+      <th class="text-center">Update Ingredient</th>
     </tr>
   </thead>
   <tbody>
@@ -26,6 +27,8 @@
       <td><%= ingredient.name %></td>
       <td><%= ingredient.unit %></td>
       <td><%= ingredient.quantity %></td>
+      <td><button class="delete" data-ingredientid="<%= ingredient.id%>">Delete Ingredient</button></td>
+
     </tr>
     <% }) %>
   </tbody>
@@ -40,6 +43,7 @@
     <tr>
       <th class="text-center">Step Number</th>
       <th class="text-center">Instruction</th>
+      <th class="text-center">Update Ingredient</th>
     </tr>
   </thead>
   <tbody>
@@ -47,6 +51,8 @@
     <tr>
       <td><%= instruction.id %></td>
       <td><%= instruction.instruction %></td>
+      <td><button class="delete" data-instructionid="<%= instruction.id%>">Delete Instruction</button></td>
+
     </tr>
     <% }) %>
   </tbody>

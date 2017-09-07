@@ -1,6 +1,7 @@
 <ol class="breadcrumb">
     <li><a href="/">Home</a></li>
     <li class="active">Add Ingredients for Recipe</a></li>
+    <li><a href="/recipes/<%= id %>/instructions/create">Add Instructions for Recipe</a><li>
 </ol>
 
 <br/>
@@ -10,25 +11,25 @@
   <div class="form-group">
     <label for="ingredient_name" class="col-sm-2 control-label">Ingredient Name</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="ingredient_name" name="name" placeholder="Cheese" required>
+      <input type="text" class="form-control" class="ingredient_name" name="name" placeholder="Cheese" required>
     </div>
   </div>
   <div class="form-group">
     <label for="ingredient_measurement" class="col-sm-2 control-label">Ingredient Measurement</label>
     <div class="col-sm-10">
-      <input type="text" class="form-control" id="ingredient_measurement" name="unit"  placeholder="cup(s)" required>
+      <input type="text" class="form-control" class="ingredient_measurement" name="unit"  placeholder="cup(s)" required>
     </div>
   </div>
   <div class="form-group">
     <label for="ingredient_quantity" class="col-sm-2 control-label">Ingredient Quantity</label>
     <div class="col-sm-10">
-      <input type="number" class="form-control" id="ingredient_quantity" name="quantity" placeholder="1" required>
+      <input type="number" class="form-control" class="ingredient_quantity" name="quantity" placeholder="1" required>
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">Add Ingredients</button>
+      <button type="submit" class="btn btn-default" id="submitIngredients">Add Ingredients to Recipe</button>
     </div>
   </div>
+
 </form>
-<button type="submit" id="addIngredientButton" class="btn btn-default">Add Another Ingredient</button>
