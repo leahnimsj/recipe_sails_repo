@@ -12,7 +12,7 @@
        console.log(ingredientNumber);
 
        $.post(`http://localhost:1337/recipes/${recipeId}/ingredients/${ingredientNumber}`, response => {
-         console.log(response)
+
        }
       )
      })
@@ -25,7 +25,7 @@
        console.log(instructionNumber);
 
        $.post(`http://localhost:1337/recipes/${recipeId}/instructions/${instructionNumber}`, response => {
-         console.log(response)
+        
        }
       )
      })
