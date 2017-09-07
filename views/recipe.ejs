@@ -27,7 +27,7 @@
       <td><%= ingredient.name %></td>
       <td><%= ingredient.unit %></td>
       <td><%= ingredient.quantity %></td>
-      <td><button class="delete" data-ingredientid="<%= ingredient.id%>">Delete Ingredient</button></td>
+      <td><button class="delete" data-recipeid= "<%= recipe.id %>" data-ingredientid="<%= ingredient.id%>">Delete Ingredient</button></td>
 
     </tr>
     <% }) %>
@@ -51,7 +51,7 @@
     <tr>
       <td><%= instruction.id %></td>
       <td><%= instruction.instruction %></td>
-      <td><button class="delete" data-instructionid="<%= instruction.id%>">Delete Instruction</button></td>
+      <td><button class="delete" data-recipeid= "<%= recipe.id %>" data-instructionid="<%= instruction.id%>">Delete Instruction</button></td>
 
     </tr>
     <% }) %>

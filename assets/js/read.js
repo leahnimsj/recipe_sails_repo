@@ -48,6 +48,28 @@
 
     //code goes here
 
+    $('#searchButton').click(function(event){
+
+      event.preventDefault();
+
+      let searchWord = $('#searchTerm').val();
+
+      // need to work on this link tomorrow
+
+      $.post('http://localhost:1337/', searchWord, response => {
+
+        console.log(searchWord);
+
+
+      })
+
+
+
+    })
+
+
+
+
 
 
 

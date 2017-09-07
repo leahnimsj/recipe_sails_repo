@@ -97,15 +97,11 @@ module.exports = {
 
 
 
-
-
-
-
-
   /**
    * `StudentController.read()`
    */
   read: function (req, res) {
+
 
     client.get(endpoint, function (data, response) {
         return res.view('read', {recipes: data});
