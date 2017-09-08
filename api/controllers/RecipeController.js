@@ -94,9 +94,6 @@ module.exports = {
   },
 
 
-
-
-
   /**
    * `StudentController.read()`
    */
@@ -207,10 +204,6 @@ module.exports = {
 
       }
     },
-
-
-
-
 
 
 
