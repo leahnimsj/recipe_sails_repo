@@ -102,52 +102,117 @@ module.exports = {
    */
   read: function (req, res) {
 
+    if(req.method != "POST"){
 
-    client.get(endpoint, function (data, response) {
+      client.get(endpoint, function (data, response) {
+          return res.view('read', {recipes: data});
+      }).on('error', function (err) {
+          return res.view('read', {error: { message: "There was an error getting the recipes"}});
+      });
+
+    }else {
+
+      var searchWord = req.body.searchTerm;
+
+      console.log(searchWord);
+
+      console.log(`${endpoint}?partOfName=${searchWord}`);
+      client.get(`${endpoint}?partOfName=${searchWord}`, function (data, response) {
         return res.view('read', {recipes: data});
-    }).on('error', function (err) {
-        return res.view('read', {error: { message: "There was an error getting the recipes"}});
-    });
-
+      })
+      }
   },
 
 
    /**
    * `StudentController.update()`
    */
-  update: function (req, res) {
-
-    if(req.method != "POST"){
-
-      client.get(endpoint, function (data, response) {
-        return res.view('update', {students: data});
-      }).on('error', function (err) {
-          return res.view('update', {error: { message: "There was an error getting the students"}});
-      });
-
-    }else{
+  updateingredient: function (req, res) {
 
       var args = {
           data: req.body,
           headers: { "Content-Type": "application/json" }
       };
 
+      console.log(args);
 
-
-      client.put(endpoint + "/" + req.body.id, args, function (data, response) {
+      console.log(`${endpoint}/${req.params.recipeid}/ingredients/${req.params.ingredid}`);
+      client.put(`${endpoint}/${req.params.recipeid}/ingredients/${req.params.ingredid}`, args, function (data, response) {
 
         if(response.statusCode != "200"){
             req.addFlash("error", data.message);
-            return res.redirect('/update');
+            return res.redirect(`/recipes/${req.params.recipeid}`);
         }
 
         req.addFlash("success", "Record updated successfully");
-        return res.redirect('/update');
+        return res.redirect(`/recipes/${req.params.recipeid}`);
 
       })
 
-    }
-  },
+    },
+
+    updateinstruction: function (req, res) {
+
+        var args = {
+            data: req.body,
+            headers: { "Content-Type": "application/json" }
+        };
+
+        console.log(args);
+
+        console.log(`${endpoint}/${req.params.recipeid}/instructions/${req.params.instructid}`);
+        client.put(`${endpoint}/${req.params.recipeid}/instructions/${req.params.instructid}`, args, function (data, response) {
+
+          if(response.statusCode != "200"){
+              req.addFlash("error", data.message);
+              return res.redirect(`/recipes/${req.params.recipeid}`);
+          }
+
+          req.addFlash("success", "Record updated successfully");
+          return res.redirect(`/recipes/${req.params.recipeid}`);
+
+        })
+
+      },
+
+
+      update: function (req, res) {
+
+      if(req.method != "POST"){
+
+        client.get(endpoint, function (data, response) {
+          return res.view('update', {recipes: data});
+        }).on('error', function (err) {
+            return res.view('update', {error: { message: "There was an error getting the recipes"}});
+        });
+
+      }else{
+
+        var args = {
+            data: req.body,
+            headers: { "Content-Type": "application/json" }
+        };
+
+        client.put(endpoint + "/" + req.body.id, args, function (data, response) {
+
+          if(response.statusCode != "200"){
+              req.addFlash("error", data.message);
+              return res.redirect('/update');
+          }
+
+          req.addFlash("success", "Record updated successfully");
+          return res.redirect('/update');
+
+        })
+
+      }
+    },
+
+
+
+
+
+
 
   recipe: function (req, res) {
 
