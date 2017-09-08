@@ -1,12 +1,11 @@
-<!-- <ol class="breadcrumb">
-    <li class="active">Home</a></li>
-</ol> -->
-
-<!-- <br/> -->
+<ol class="breadcrumb">
+    <li class="active">Home</li>
+</ol>
 
 <%- partial ('partials/statusmessage.ejs') %>
-<form>
-      search recipes: <input id="searchTerm" name="searchTerm" type="text" placeholder="search here"><button id="searchButton">search recipe</button>
+
+<form class="navbar-form navbar-right">
+      <input id="searchTerm" name="searchTerm" type="text" placeholder="search here"><button id="searchButton">Search Recipe</button>
 </form>
 
 <h2>Recipes</h2>
@@ -18,7 +17,7 @@
       <th>Time to Cook</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="recipesBody">
   <% if(typeof recipes != "undefined" && recipes.length > 0){ %>
     <% recipes.forEach(function(recipe){ %>
       <tr>
@@ -29,4 +28,9 @@
     <% }) %>
   <% } %>
   </tbody>
+</table>
+
+
+<table>
+
 </table>

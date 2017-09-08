@@ -36,8 +36,8 @@
        size: 4,
        liveSearch: true,
        showTick: true,
-       tickIcon: 'glyphicon-user',
-       header: "Recipe search"
+       tickIcon: 'glyphicon-apple',
+       header: "Recipe Search"
       });
 
 

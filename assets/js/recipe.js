@@ -8,6 +8,25 @@
      $('#updateInstructionForm').hide();
 
 
+   //   $('#ingredientTable').DataTable({
+   //           dom: 'Bfrtip',
+   //           buttons: [
+   //               // 'copy', 'csv', 'excel', 'pdf', 'print'
+   //           ],
+   //           colReorder: true,
+   //           "scrollX": true
+   //         });
+     //
+   //   $('#instructionTable').DataTable({
+   //          dom: 'Bfrtip',
+   //          colReorder: true,
+   //          buttons: [
+   //              // 'copy', 'csv', 'excel', 'pdf', 'print'
+   //          ],
+   //          "scrollX": true
+   //        });
+
+
      $('#ingredientTable').on("click", ".delete", function(e){
 
        let recipeNumber = $(this).data("recipeid");

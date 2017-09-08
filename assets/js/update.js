@@ -54,8 +54,8 @@
        size: 4,
        liveSearch: true,
        showTick: true,
-       tickIcon: 'glyphicon-user',
-       header: "Recipe search"
+       tickIcon: 'glyphicon-apple',
+       header: "Recipe Search"
       });
 
      $("#recipe_id").change(function () {
@@ -63,12 +63,13 @@
 
         searchURL = $(this).find("option:selected").val();
 
+        console.log(searchURL);
 
-        $.get("http://morning-sierra-47011.herokuapp.com/recipes/" + searchURL, function (data) {
+        $.get('http://localhost:1337/recipes/' + searchURL + '/find', response => {
 
-          console.log(data.title);
+          console.log(response.title);
 
-          $.each(data, function(name, val){
+          $.each(response, function(name, val){
 
         // find the name attribute of each piece of data in your object
             let el = $('[name="'+name+'"]')
@@ -86,83 +87,6 @@
         })
 
       });
-
-
-      $("#updateStudentForm").validate({
-        errorClass: 'text-danger',
-        rules: {
-          // simple rule, converted to {required:true}
-          first_name: {
-            required: true,
-            minlength: 2
-          },
-          // compound rule
-          last_name: {
-            required: true,
-            minlength: 2
-          },
-
-          start_date: {
-            dateISO: true,
-            required: true
-          },
-
-          gpa: {
-            number: true
-          },
-
-          sat: {
-            range: [0,2400]
-          }
-
-
-        },
-        messages: {
-          first_name: {
-            required: "First name is required",
-            minlength: "Is your last name really only 2 letters?"
-          },
-          last_name: {
-            required: "Last name is required"
-          },
-          start_date: {
-            required: "Start date is required"
-          }
-
-        }
-      });
-
-
-      $('#updateStudentForm').submit(function () {
-        let updateString = $("#updateStudentForm").serialize();
-
-        $.ajax({
-              url: 'http://localhost:1337/student/' + searchURL,
-              type: 'PUT',
-              data: updateString,
-              success: function(result) {
-                alert("This record has been updated");
-              }
-            })
-
-
-
-      })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
    })

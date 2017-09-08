@@ -34,7 +34,6 @@
 
    $(function(){
 
-     $(document).ready( function () {
       $('#recipesTable').DataTable({
         dom: 'Bfrtip',
         buttons: [
@@ -42,9 +41,7 @@
         ],
         colReorder: true,
         "scrollX": true
-
       });
-      } );
 
     //code goes here
 
@@ -59,16 +56,42 @@
       $.post('http://localhost:1337/', {searchTerm:searchWord}, response => {
 
         console.log(searchWord);
+        console.log(response);
 
-        window.location.reload(true);
+
+       $('#recipesBody').empty();
+       
+        response.forEach(function(recipe){
+
+           $('#recipesBody').append(
+             `
+                <tr>
+                  <td><a href="recipes/${recipe.id}">${recipe.title}</a></td>
+                  <td>${recipe.description}</td>
+                  <td>${recipe.minutes}</td>
+                </tr>
+            `
+
+
+
+          )
+
+         //   table += `
+         //    <tbody>
+         //       <tr>
+         //         <td><a href="recipes/${recipe.id}">${recipe.title}</a></td>
+         //         <td>${recipe.description}</td>
+         //         <td>${recipe.minutes}</td>
+         //       </tr>
+         //    </tbody>
+         //   `
+         //  $('#recipesTable').html(table)
+
+       })
+
       })
 
-
-
     })
-
-
-
 
 
 

@@ -42,17 +42,18 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
-  '/create':                  'RecipeController.create',
-  '/recipes/:id/ingredients/create':         'RecipeController.ingredients',
-  '/recipes/:id/instructions/create': 'RecipeController.instructions',
-  '/'      :                  'RecipeController.read',
-  '/update/:recipeid/ingredients/:ingredid':       'RecipeController.updateingredient',
-  '/update/:recipeid/instructions/:instructid':       'RecipeController.updateinstruction',
-  '/delete':                  'RecipeController.delete',
-  '/recipes/:id':             'RecipeController.recipe',
-  '/recipes/:recipeid/ingredients/:ingredid': 'RecipeController.deleteingredient',
-  '/recipes/:recipeid/instructions/:instructid': 'RecipeController.deleteinstruction',
-  '/update': 'RecipeController.update'
+  '/create':                                      'RecipeController.create',
+  '/recipes/:id/ingredients/create':              'RecipeController.ingredients',
+  '/recipes/:id/instructions/create':             'RecipeController.instructions',
+  '/'      :                                      'RecipeController.read',
+  '/update/:recipeid/ingredients/:ingredid':      'RecipeController.updateingredient',
+  '/update/:recipeid/instructions/:instructid':   'RecipeController.updateinstruction',
+  '/delete':                                      'RecipeController.delete',
+  '/recipes/:recipeid/ingredients/:ingredid':     'RecipeController.deleteingredient',
+  '/recipes/:recipeid/instructions/:instructid':  'RecipeController.deleteinstruction',
+  '/update':                                      'RecipeController.update',
+  '/recipes/:id/find':                            'RecipeController.find',
+  '/recipes/:id':                                 'RecipeController.recipe'
 
 
 };
