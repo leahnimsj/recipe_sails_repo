@@ -24,56 +24,92 @@
  *
  */
 
-// (function(){
-//
-//   $(function(){
-//
-//     $("#addStudentForm").validate({
-//       errorClass: 'text-danger',
-//       rules: {
-//         // simple rule, converted to {required:true}
-//         first_name: {
-//           required: true,
-//           minlength: 2
-//         },
-//         // compound rule
-//         last_name: {
-//           required: true,
-//           minlength: 2
-//         },
-//
-//         start_date: {
-//           dateISO: true,
-//           required: true
-//         },
-//
-//         gpa: {
-//           number: true
-//         },
-//
-//         sat: {
-//           range: [0,2400]
-//         }
-//
-//
-//       },
-//       messages: {
-//         first_name: {
-//           required: "First name is required",
-//           minlength: "Is your last name really only 2 letters?"
-//         },
-//         last_name: {
-//           required: "Last name is required"
-//         },
-//         start_date: {
-//           required: "Start date is required"
-//         }
-//
-//       }
-//     });
-//
-//   	//code goes here
-//
-//   })
-//
-// })();
+(function(){
+
+  $(function(){
+
+    $("#addRecipeForm").validate({
+      errorClass: 'text-danger',
+      rules: {
+        // simple rule, converted to {required:true}
+        title: {
+          required: true
+        },
+        // compound rule
+        description: {
+          required: true
+        },
+
+        minutes: {
+          required: true,
+          number: true
+        }
+
+      },
+      messages: {
+        minutes: {
+          number: "Input must be a number. Hint - use minutes."
+        }
+
+      }
+    });
+
+    $("#addIngredientForm").validate({
+      errorClass: 'text-danger',
+      rules: {
+        // simple rule, converted to {required:true}
+        name: {
+          required: true
+        },
+        // compound rule
+        unit: {
+          required: true
+        },
+
+        quantity: {
+          number: true
+        }
+
+      },
+      messages: {
+        quantity: {
+          number: "Quantity must be a number."
+        }
+
+      }
+    });
+
+    $("#addInstructionForm").validate({
+      errorClass: 'text-danger',
+      rules: {
+        // simple rule, converted to {required:true}
+        stepNumber: {
+          required: true,
+          number: true
+        },
+        // compound rule
+        instruction: {
+          required: true
+
+      },
+      messages: {
+        instruction: {
+          required: "What's a step without an instrution?"
+        }
+
+      }
+    });
+
+
+
+
+
+
+
+
+
+  	//code goes here
+
+  })
+
+})();
