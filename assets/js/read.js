@@ -56,11 +56,11 @@
 
       // need to work on this link tomorrow
 
-      $.post('http://localhost:1337/', searchWord, response => {
+      $.post('http://localhost:1337/', {searchTerm:searchWord}, response => {
 
         console.log(searchWord);
 
-
+        window.location.reload(true);
       })
 
 

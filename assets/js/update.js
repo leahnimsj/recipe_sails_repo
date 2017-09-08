@@ -46,27 +46,27 @@
 
    $(function(){
 
-     $("#updateStudentForm :input").prop("disabled", true);
+     $("#updateRecipeForm :input").prop("disabled", true);
 
 
-     $('#student_id').selectpicker({
+     $('#recipe_id').selectpicker({
        style: 'btn-info',
        size: 4,
        liveSearch: true,
        showTick: true,
        tickIcon: 'glyphicon-user',
-       header: "Student search"
+       header: "Recipe search"
       });
 
-     $("#student_id").change(function () {
-        $("#updateStudentForm :input").prop("disabled", false);
+     $("#recipe_id").change(function () {
+        $("#updateRecipeForm :input").prop("disabled", false);
 
         searchURL = $(this).find("option:selected").val();
 
 
-        $.get("http://localhost:1337/student/" + searchURL, function (data) {
+        $.get("http://morning-sierra-47011.herokuapp.com/recipes/" + searchURL, function (data) {
 
-          console.log(data.first_name);
+          console.log(data.title);
 
           $.each(data, function(name, val){
 

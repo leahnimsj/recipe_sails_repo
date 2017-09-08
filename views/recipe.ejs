@@ -27,7 +27,7 @@
       <td><%= ingredient.name %></td>
       <td><%= ingredient.unit %></td>
       <td><%= ingredient.quantity %></td>
-      <td><button class="delete" data-recipeid= "<%= recipe.id %>" data-ingredientid="<%= ingredient.id%>">Delete Ingredient</button></td>
+      <td><button class="delete" data-recipeid= "<%= recipe.id %>" data-ingredientid="<%= ingredient.id%>">Delete Ingredient</button><button class="update" data-recipeid= "<%= recipe.id %>" data-ingredientid="<%= ingredient.id%>">Edit Ingredient</button></td>
 
     </tr>
     <% }) %>
@@ -43,7 +43,7 @@
     <tr>
       <th class="text-center">Step Number</th>
       <th class="text-center">Instruction</th>
-      <th class="text-center">Update Ingredient</th>
+      <th class="text-center">Update Instruction</th>
     </tr>
   </thead>
   <tbody>
@@ -51,9 +51,42 @@
     <tr>
       <td><%= instruction.id %></td>
       <td><%= instruction.instruction %></td>
-      <td><button class="delete" data-recipeid= "<%= recipe.id %>" data-instructionid="<%= instruction.id%>">Delete Instruction</button></td>
+      <td><button class="delete" data-recipeid= "<%= recipe.id %>" data-instructionid="<%= instruction.id%>">Delete Instruction</button><button class="update" data-recipeid= "<%= recipe.id %>" data-instructionid="<%= instruction.id%>">Edit Instruction</button></td>
 
     </tr>
     <% }) %>
   </tbody>
 </table>
+
+
+<div>
+  <div class="container" >
+    <form id="updateIngredientForm">
+      <!-- <h4 class="text-center">Please complete the following information:</h4> -->
+      <div class="form-group">
+        <label for="ingredient_name">Ingredient</label>
+        <input type="text" class="form-control" name="name" placeholder="Cheese">
+      </div>
+      <div class="form-group">
+        <label for="ingredient_measurement">Measurement</label>
+        <input type="text" class="form-control" name="unit" placeholder="Cup(s)">
+      </div>
+      <div class="form-group">
+        <label for="ingredient_quantity">Quanity</label>
+        <input type="number" class="form-control" name="quantity" placeholder="1">
+      </div>
+    </form>
+  </div>
+</div>
+
+<div>
+  <div class="container" >
+    <form id="updateInstructionForm">
+      <!-- <h4 class="text-center">Please complete the following information:</h4> -->
+      <div class="form-group">
+        <label for="instruction_name">Instruction</label>
+        <input type="text" class="form-control" name="instruction" placeholder="Melt the butter">
+      </div>
+    </form>
+  </div>
+</div>
