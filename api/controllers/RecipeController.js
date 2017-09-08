@@ -61,7 +61,7 @@ module.exports = {
             return res.redirect(`recipes/${data.id}/ingredients/create`);
         }
 
-        req.addFlash("success", "Record created successfully");
+        // req.addFlash("success", "Record created successfully");
         return res.view('ingredients', {id: req.params.id});
 
     })
@@ -86,7 +86,7 @@ module.exports = {
             return res.redirect(`recipes/${data.id}/instructions/create`);
         }
 
-        req.addFlash("success", "Record created successfully");
+        // req.addFlash("success", "Record created successfully");
         return res.view('instructions', {id: req.params.id});
 
     })
@@ -118,7 +118,7 @@ module.exports = {
 
       console.log(`${endpoint}?partOfName=${searchWord}`);
       client.get(`${endpoint}?partOfName=${searchWord}`, function (data, response) {
-        return res.view('read', {recipes: data});
+        return res.send(data);
       })
       }
   },
@@ -225,6 +225,28 @@ module.exports = {
 
 
   },
+
+
+
+  find: function (req, res) {
+
+    client.get(endpoint + "/" + req.params.id, function (data, response) {
+        return res.send(data);
+
+    }).on('error', function (err) {
+        return res.view('recipe', {error: { message: "There was an error getting the recipe"}});
+    });
+
+
+
+
+
+
+  },
+
+
+
+
 
   deleteingredient: function (req, res) {
 
